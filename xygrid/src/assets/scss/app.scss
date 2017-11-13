@@ -95,3 +95,25 @@
         background-color: coral;
     }
 }
+
+// Parent Alignment (with mixins)
+
+.container {
+    @include xy-grid-container();
+}
+
+.main-content-children {
+    @include xy-grid();
+    background-color: rgb(68, 48, 48);
+    height: 300px;
+
+    // $x = left, right, center, justify, spaced
+    // $y = top, bottom, middle, stretch
+
+     @include flex-align(spaced, middle);
+
+    .content {
+        @include xy-cell(4);
+        background-color: rgb(0, 179, 179);
+    }
+}
