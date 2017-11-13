@@ -117,3 +117,89 @@
         background-color: rgb(0, 179, 179);
     }
 }
+
+// child alignment (with mixins)
+
+.main-content-self {
+    @include xy-grid();
+    background-color: navy;
+    height: 400px;
+}
+.content-top {
+    @include xy-cell();
+    background-color: brown;
+    color: white;
+
+    // $x =  top, bottom, middle, stretch
+    @include flex-align-self(middle);
+    @include flex-order(2);
+    @include breakpoint(medium) {
+    @include flex-order(1);
+    
+    }
+}
+.content-middle {
+    @include xy-cell();
+    background-color: goldenrod;
+    @include flex-order(1);
+    @include breakpoint(medium) {
+    @include flex-order(2);
+    
+    }
+    
+}
+
+// mixins
+.hamburger {
+    @include hamburger(grey, rgb(0, 214, 214), 50px, 30px, 5px, 3);
+}
+
+.center-element {
+    height: 300px;
+    background-color: #e1e1e1;
+    position: relative;
+    p {
+        @include absolute-center;
+    }
+}
+.box-element {
+    @include box(200px, 100px);
+    background-color: rgb(0, 0, 49);
+
+    &:hover() {
+        background-color: rgb(45, 137, 190);
+    }
+}
+ .success {
+     height: 50px;
+     @include bordered(4px, solid, green);
+     position: relative;
+     p {
+         @include absolute-center;
+     }
+ }
+
+ .bold {
+     @include font-bold();
+ }
+
+ .position {
+     @include position(relative);
+     height: 300px;
+     background-color: #e1e1e1;
+     .child-element {
+        @include position(absolute, 0,0,0,0);
+         background-color: white;
+        @include box(50%, 100%);
+
+     }
+ }
+
+ .main-content {
+     height: rem-calc(100);
+     background-color: chocolate;
+     p {
+         font-size: rem-calc(20);
+     }
+     @include padding(2,3,4,5);
+ }
