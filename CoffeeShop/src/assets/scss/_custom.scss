@@ -23,7 +23,19 @@ $bellefair: 'Bellefair', serif;
 
 .container {
     @include xy-grid-container();
+    @include padding(null,0,null,0);
 }
+
+.main-content {
+    background-color: $white;
+    padding: rem-calc(5);
+    @include breakpoint(medium) {
+        margin-top: rem-calc(-120);
+        position: relative;
+        padding: rem-calc(50 80);
+    }
+}
+
 .site-header {
     position: relative;
     background-size: cover;
@@ -33,6 +45,10 @@ $bellefair: 'Bellefair', serif;
     }
     &.about {
         @include background_image(about);
+        
+    }
+    &.process {
+        @include background_image(process);
         
     }
     .header-content {
@@ -156,10 +172,10 @@ $bellefair: 'Bellefair', serif;
 .site-footer {
     background-color: $primary-color;
     .container {
-        background-color: white;
+        background-color: $white;
         .footer-content {
             @include xy-grid();
-            @include padding(2,2,4,2);
+            @include padding(2, 2, 4, 2);
             .footer-box {
                 @include xy-cell();
                 @include breakpoint(small only) {
@@ -202,6 +218,8 @@ $bellefair: 'Bellefair', serif;
     font-size: rem-calc(18);
     margin-bottom: rem-calc(100);
     margin-top: rem-calc(40);
+    width: 100%;
+    
     span{
     color: $primary-color;
     font-size: rem-calc(38);
@@ -215,5 +233,96 @@ $bellefair: 'Bellefair', serif;
         background-image: url(../img/coffee.svg);
         background-repeat: no-repeat;
         @include horizontal-center();
+        margin-top: rem-calc(-15);
+    }
+}
+
+// ============= INNER PAGES ==============
+
+// ***about us***
+main.page-about {
+    @include xy-grid();
+    @include flex-align(justify,top);
+
+    .image {
+        @include xy-cell();
+        @include breakpoint(medium) {
+            @include xy-cell(50%);
+        }
+
+        .image-effect {
+            @include rotate(-10);
+            border: rem-calc(10) solid $white;
+            @include shadow();
+            width: 90%;
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(70);
+            }
+
+        }
+    }
+    .page-content {
+        @include xy-cell();        
+        @include breakpoint(medium) { 
+            @include xy-cell(50%);
+        }
+        p {
+            font-size: rem-calc(16);
+            line-height: rem-calc(40);
+        }
+
+        blockquote {
+            font-size: rem-calc(30);
+        }
+    }
+}
+
+// ***process***
+.page-process {
+    .process-container {
+        @include xy-grid();
+        .process-item {
+            @include xy-gutters($gutter-position: bottom);
+            @include xy-cell();
+            @include breakpoint(medium) {
+                @include xy-cell(1 of 2);
+            }
+        }
+        .process-image {
+            border: rem-calc(10) solid $white;
+            @include shadow();
+        }
+        @include breakpoint(medium) {
+            @include odd() {
+                .process-image {
+                    order: 2;
+                }
+                .process-content {
+                    order: 1;
+                }
+            }
+        }
+        .process-content {
+            h3 {
+                color: $primary-color;
+                @include margin(1);
+                @include text-transform(uppercase);
+                @include font-bold(900);
+
+                &:after {
+                    width: rem-calc(200);
+                    height: rem-calc(2);
+                    background-color: $secondary-color;
+                    content: '';
+                    display: block;
+                    margin-top: rem-calc(10);
+                }
+            }
+            p {
+                font-size: rem-calc(18);
+                line-height: rem-calc(38);
+                margin-top: rem-calc(30);
+            }
+        }
     }
 }
