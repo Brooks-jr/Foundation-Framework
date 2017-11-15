@@ -280,6 +280,7 @@ main.page-about {
 // ***process***
 .page-process {
     .process-container {
+        margin-top: rem-calc(30);
         @include xy-grid();
         .process-item {
             @include xy-gutters($gutter-position: bottom);
