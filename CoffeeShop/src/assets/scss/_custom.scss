@@ -51,8 +51,12 @@ $bellefair: 'Bellefair', serif;
         @include background_image(process);
         
     }
-    &.menu {
+    &.menu1 {
         @include background_image(menu);
+        
+    }
+    &.gallery {
+        @include background_image(gallery);
         
     }
     .header-content {
@@ -140,7 +144,8 @@ $bellefair: 'Bellefair', serif;
         @include menu-base();
         @include flex-align(right, middle);
         @include breakpoint(small only) {
-            background-color: $primary-color;
+            background-color: rgba(85, 53, 42, 0.90);
+
         }
 
         li {
@@ -351,7 +356,7 @@ main.page-about {
 }
 
 // *** menu ***
-.page-menu {
+.page-menu1 {
     @include xy-grid();
     padding-bottom: 0;
     .menu-description {
@@ -471,4 +476,72 @@ main.page-about {
              margin: 0;
          }
      }
+}
+
+// *** gallery ***
+
+.gallery-top {
+    margin-bottom: rem-calc(20);
+    @include breakpoint(medium) {
+        margin-bottom: rem-calc(5);
+    }
+    @include xy-grid();
+
+    .left-content {
+        @include xy-cell(1 of 4);
+        @include breakpoint(small only) {
+            @include xy-cell(4 of 9);
+        }
+    }
+
+    .right-content {
+        @include xy-cell(3 of 4);
+        @include breakpoint(small only) {
+            @include xy-cell(5 of 9);
+        }
+        @include xy-grid-collapse();
+
+        .right-container {
+            @include xy-grid();
+            
+            .gallery-item { 
+                @include xy-cell(4);
+                @include breakpoint(small only) {
+                    @include xy-cell(6);
+                }
+                @include xy-gutters(30, padding, bottom);
+                &.two-cols {
+                    @include xy-cell(8);
+                    @include breakpoint(small only) {
+                        @include xy-cell();
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.gallery-bottom {
+    @include xy-grid();
+    > .gallery-item {
+        @include xy-cell(25%);
+        @include xy-grid-collapse();
+        @include xy-gutters(18);
+        &.two-cols {
+            @include xy-cell(50%);
+            @include xy-gutters(15, padding, right);
+        }
+    }
+    .right-content {
+        @include xy-cell(25%);
+        @include xy-grid-collapse();
+        @include xy-gutters(25, padding, left bottom right);
+        @include breakpoint(small only) {
+            @include xy-gutters();
+        }
+        .gallery-item {
+            margin-bottom: rem-calc(23);
+        }
+    }
 }
