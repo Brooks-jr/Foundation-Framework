@@ -8,7 +8,7 @@
        {
           "name":"caffee mocha",
           "price":"3.50",
-          "desc":"Espresso with cream, and Whippead Cream"
+          "desc":"Espresso with cream and Whipped Cream"
        },
        {
           "name":"caffee americano",
@@ -18,7 +18,7 @@
        {
           "name":"capuccino",
           "price":"2.95",
-          "desc":"Espresso, and Smoothed Layer of Foam"
+          "desc":"Espresso and Smooth Layer of Foam"
        },
        {
           "name":"iced caffee mocha",
@@ -28,7 +28,7 @@
        {
           "name":"iced smoked mocha",
           "price":"3.50",
-          "desc":"Espresso, ice, with smoked butterscotch"
+          "desc":"Espresso, and ice with smoked butterscotch"
        },
        {
           "name":"iced caramel latte",
@@ -40,7 +40,7 @@
        {
           "name":"grilled chicken sandwich",
           "price":"12.95",
-          "desc":"breaded chicken or cauliflower hummus \u0003pickles caramelized onions & sriracha"
+          "desc":"Grilled chicken breast with cauliflower hummus, pickles, caramelized onions & sriracha"
        },
        {
           "name":"turkey breast sandwich",
@@ -50,17 +50,17 @@
        {
           "name":"meatball marinara sandwich",
           "price":"9.95",
-          "desc":"Italian seasoned meatballs served hot in a \u0003zesty marinara sauce."
+          "desc":"Italian seasoned meatballs served hot in a zesty marinara sauce"
        },
        {
           "name":"veggie sub",
           "price":"5.95",
-          "desc":"Veggie burger topped with choice of fresh vegetables."
+          "desc":"Veggie burger topped with choice of fresh vegetables"
        },
        {
-          "name":"cheese sub",
+          "name":"philly cheese sub",
           "price":"5.50",
-          "desc":"Steak with onions, peppers and your choice of sauce."
+          "desc":"Steak with onions, cheese, peppers and your choice of sauce"
        },
        {
           "name":"biscuits",
