@@ -21,6 +21,8 @@
 $bellefair: 'Bellefair', serif;
 // ==========================
 
+
+
 .container {
     @include xy-grid-container();
     @include padding(null,0,null,0);
@@ -159,11 +161,22 @@ $bellefair: 'Bellefair', serif;
             }
 
             a {
+               
+                padding: 6px 8px;
+                border-bottom: 1px solid transparentize(#fefefe, 1);
+                transition: border-bottom 0.5s;
+                transition-timing-function: ease-in-out;
+      
                 @include text-transform(uppercase);
                 @include font-bold(700);
                 font-size: rem-calc(14);
-                &:hover {
 
+                &:hover {
+                    border-bottom: 1px solid opacify($secondary-color, .5);                    
+                    color: $secondary-color;
+                } 
+
+                &:active {
                     color: $secondary-color;
                 }
             }
@@ -190,7 +203,15 @@ $bellefair: 'Bellefair', serif;
 
 // Footer
 .site-footer {
-    background-color: $primary-color;
+    // background-color: $primary-color;
+
+    background-image: url(../img/shop_bg.jpg);
+    background-position: center, center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+   
     .container {
         background-color: $white;
         .footer-content {
@@ -227,6 +248,7 @@ $bellefair: 'Bellefair', serif;
         font-size: rem-calc(14);
         @include padding(1, null, 1, null);
         @include font-bold(400);
+        @include font-bold(900);
     }
 }
 
