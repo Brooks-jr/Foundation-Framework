@@ -10,7 +10,7 @@ slogan: atmosphere as great as the coffee
             <div class="gallery-top">
                 <div class="left-content">
                     <div class="gallery-item">
-                        <a href="#" data-open="image1">
+                        <a href="#" data-open="image0">
                             <img src="assets/img/gallery/gallery_01_small.jpg">
                         </a>
                     </div>
@@ -19,19 +19,27 @@ slogan: atmosphere as great as the coffee
                 <div class="right-content">
                     <div class="right-container">
                         <div class="gallery-item two-cols">
+                        <a href="#" data-open="image1">  
                             <img src="assets/img/gallery/gallery_02_small.jpg">
+                            </a>
                         </div>
 
                         <div class="gallery-item">
+                        <a href="#" data-open="image2"> 
                             <img src="assets/img/gallery/gallery_03_small.jpg">
+                            </a>
                         </div>
 
                         <div class="gallery-item">
+                        <a href="#" data-open="image3">
                             <img src="assets/img/gallery/gallery_04_small.jpg">
+                            </a>
                         </div>
 
                         <div class="gallery-item two-cols">
+                        <a href="#" data-open="image4">           
                             <img src="assets/img/gallery/gallery_05_small.jpg">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -39,18 +47,30 @@ slogan: atmosphere as great as the coffee
 
             <div class="gallery-bottom">
                 <div class="gallery-item two-cols">
+                        <a href="#" data-open="image5">
+                                
                     <img src="assets/img/gallery/gallery_06_small.jpg">
+                    </a>
                 </div>
 
                 <div class="gallery-item">
+                        <a href="#" data-open="image6">
+                                
                     <img src="assets/img/gallery/gallery_07_small.jpg">
+                    </a>
                 </div>
                 <div class="right-content">
                     <div class="gallery-item">
+                            <a href="#" data-open="image7">
+                                    
                         <img src="assets/img/gallery/gallery_08_small.jpg">
+                        </a>
                     </div>
                     <div class="gallery-item">
+                            <a href="#" data-open="image8">
+                                    
                         <img src="assets/img/gallery/gallery_09_small.jpg">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,10 +79,12 @@ slogan: atmosphere as great as the coffee
 </div>
 
 <!-- GALLERY MODAL -->
-<div class="reveal" id="image1" data-reveal>
+{{#each gallery.gallery}}
+<div class="reveal" id="image{{@index}}" data-reveal data-animation-in="reveal-in" data-animation-out="reveal-out">
     <button class="close-button" data-close type="button">
         <span aria-hidden="true">&times;</span>
     </button> 
-    <img src="assets/img/gallery/gallery_01_large.jpg">
+    <img src="{{this.url}}">
     
 </div>
+{{/each}}
