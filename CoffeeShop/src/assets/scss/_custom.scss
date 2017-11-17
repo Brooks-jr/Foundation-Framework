@@ -59,6 +59,10 @@ $bellefair: 'Bellefair', serif;
         @include background_image(gallery);
         
     }
+    &.contact {
+        @include background_image(contact);
+        
+    }
     .header-content {
         padding-top: rem-calc(30);
 
@@ -175,6 +179,13 @@ $bellefair: 'Bellefair', serif;
 
 .menu-out {
     @include mui-zoom(out, 1, .1, true, .5s, ease);
+}
+
+.reveal-in {
+    @include mui-slide();
+}
+.reveal-out {
+    @include mui-slide(out, left, 100%, fade);    
 }
 
 // Footer
@@ -386,10 +397,10 @@ main.page-about {
     @include position(relative);
     background-position: center, center;
     background-attachment: scroll;
-    @include breakpoint(large) {
-        background-size: cover;
-        background-attachment: fixed;
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
      h2 {
          color: $white;
          @include font-bold(900);
@@ -543,5 +554,70 @@ main.page-about {
         .gallery-item {
             margin-bottom: rem-calc(23);
         }
+    }
+}
+.reveal {
+    background-color: $cream;
+    button {
+        color: $primary-color;
+    }
+}
+
+// *** contact us ***
+
+.page-contact {
+    background-image: url(../img/coffee_beans.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 60%;
+    @include xy-grid();
+    @include breakpoint(medium) {
+        background-size: 40%;
+    }
+    .reservation-form {
+        @include xy-cell();
+        @include breakpoint(medium) {
+            @include xy-cell(6);
+        }
+    }
+}
+.field-container {
+    label {
+        color: $primary-color;
+        font-size: rem-calc(20);
+        @include font-bold(900);
+        @include text-transform(uppercase);
+
+        &:before {
+            padding-right: rem-calc(15);
+            display: inline-block;
+            font-family: 'Fontawesome';
+            font-size: rem-calc(30);
+            color: darken($cream, 10);
+            -webkit-font-smoothing: antialiased;
+              
+        } 
+        &[for*="name"]::before {content: '\f040';}
+        &[for*="contactYou"]::before {content: '\f2bc';}
+        &[for*="party"]::before {content: '\f0c0';}                
+        &[for*="time"]::before {content: '\f017 ';}
+        &[for*="when"]::before {content: '\f073 ';}
+        
+    }
+    input, select {
+            border-color: white;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+       
+        border-bottom: rem-calc(2) solid darken($cream, 10);
+        height: rem-calc(50);
+    }
+    .send_btn {
+        @include font-bold();
+        @include text-transform(uppercase);
+        font-size: rem-calc(18);
+        width: 100%;
+        height: auto;
+        
     }
 }
