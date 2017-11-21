@@ -11,18 +11,24 @@ slogan: Better Beans, Better Coffee
         </h2>
 
         <div class="reservation-form">
-            <form method="post" id="contact-form">
+            <form method="post" id="contact-form" data-abide novalidate>
                 <div class="field-container">
                     <label for="name">
                         Your Name:
-                        <input type="text" placeholder="Full Name" name="name">
+                        <input type="text" placeholder="Full Name" name="name" required>
+                        <span class="form-error">
+                            *Name field is mandatory
+                        </span>
                     </label>
                 </div>
 
                 <div class="field-container">
                     <label for="contactYou">
-                        Phone or Email:
-                        <input type="text" id="phone" placeholder=" Phone or Email" name="contactYou">
+                        Email:
+                        <input type="text" id="phone" placeholder="Email" name="contactYou" required pattern="email">
+                        <span class="form-error">
+                                *Email field is mandatory
+                            </span>
                     </label>
                 </div>
 
@@ -30,8 +36,7 @@ slogan: Better Beans, Better Coffee
 
                     <label for="party">
                         For:
-                        <select name="party" id="party">
-                            <option>How Many?</option>
+                        <select name="party" id="party" required>
                             <option value="1">1 Person</option>
                             <option value="2">2 People</option>
                             <option value="3">3 People</option>
@@ -43,6 +48,9 @@ slogan: Better Beans, Better Coffee
                             <option value="9">9 People</option>
                             <option value="10">10 People</option>
                         </select>
+                        <span class="form-error">
+                                *Party field is mandatory
+                            </span>
                     </label>
                 </div>
 
@@ -50,14 +58,20 @@ slogan: Better Beans, Better Coffee
 
                     <label for="time">
                         Time:
-                        <input type="text" id="time" placeholder="Eg: 10:30 AM" name="time">
+                        <input type="time" id="time" placeholder="Eg: 10:30 AM" name="time" required>
+                        <span class="form-error">
+                                *Time field is mandatory
+                            </span>
                     </label>
                 </div>
                 <div class="field-container">
 
                     <label for="when">
                         When:
-                        <input type="date" id="when" name="when">
+                        <input type="date" id="when" name="when" required>
+                        <span class="form-error">
+                                *Date field is mandatory
+                            </span>
                     </label>
                 </div>
 
@@ -67,5 +81,32 @@ slogan: Better Beans, Better Coffee
                         
             </form>
         </div>
+        
     </main>
+    {{> our_gallery}}
+    
+</div>
+<div class="container contact-about">
+<div class="about-us-landing">
+        <h2 class="heading-title">Learn More
+            <span>About Us</span>
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, totam debitis. Placeat asperiores eius et, fugiat
+            pariatur esse molestiae. Ad, dignissimos. Pariatur dolore ex at minima sunt praesentium, culpa quod? Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Expedita vel at necessitatibus modi facilis ad id itaque,
+            nulla error debitis iusto, minima quisquam laborum natus nostrum, perferendis rem eum. Deserunt.</p>
+        <a href="about.html">Read More</a>
+
+        <div class="category-icons">
+            <div class="icon coffee">
+                <h3>Coffee</h3>
+            </div>
+            <div class="icon desserts">
+                <h3>Desserts</h3>
+            </div>
+            <div class="icon tea">
+                <h3>Tea</h3>
+            </div>
+        </div><!--icons-->
+    </div>
 </div>

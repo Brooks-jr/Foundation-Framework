@@ -20,7 +20,14 @@
 // Bellefair Font ===========
 $bellefair: 'Bellefair', serif;
 // ==========================
-
+body {
+    background-image: url(../img/main_bg.jpg);
+    background-position: center, center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 
 .container {
@@ -42,6 +49,7 @@ $bellefair: 'Bellefair', serif;
     position: relative;
     background-size: cover;
     height: 100vh;
+    background-attachment: fixed;
     &.landing {
         @include background_image(home);
     }
@@ -201,16 +209,87 @@ $bellefair: 'Bellefair', serif;
     @include mui-slide(out, left, 100%, fade);    
 }
 
+// LANDING PAGE
+
+// *** about ***
+.about-us-landing {
+    text-align: center;
+    margin-bottom: rem-calc(70);
+    @include breakpoint(medium) {
+        @include xy-cell(80%);
+        @include xy-cell-offset(10%);
+    }
+    p {
+        color: darken($primary-color, 10);
+        text-align: center;
+        line-height: rem-calc(40);
+        font-size: rem-calc(18);
+    }
+    a { 
+        margin-top: rem-calc(25);
+        color: darken($cream, 10);        
+        border: 5px solid darken($cream, 10);
+        @include font-bold(700);
+        @include text-transform(uppercase);
+        font-size: rem-calc(25);
+        @include padding(.5,.5,.5,.5);
+        &:hover {
+            background-color: $primary-color;
+        }
+    }
+    .category-icons {
+        @include xy-grid();
+        
+        .icon {
+            margin-top: rem-calc(50);
+            // border-radius: 50%;
+            @include xy-cell();
+            @include breakpoint(medium) {
+                @include xy-cell(1 of 3);
+                
+        }
+            height: rem-calc(220);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: rem-calc(120%);
+            @include flex();
+            @include flex-align(center, bottom);
+
+            &.coffee, &.desserts, &.tea {
+                &:hover {
+                    // background-color: darken($primary-color, 10);
+                    h3 {color: $primary-color;}
+                }
+            }   
+            &.coffee {
+                background-image: url(../img/icon_coffee.svg);
+            }
+            &.desserts {
+                background-image: url(../img/icon_dessert.svg);
+            }
+            &.tea {
+                background-image: url(../img/icon_tea.svg);
+            }
+            h3 {
+                text-align: center;
+                font-family: $bellefair;
+                color: $secondary-color;
+                font-size: rem-calc(38);
+            }
+        }
+    }
+}
+
 // Footer
 .site-footer {
-    // background-color: $primary-color;
-
-    background-image: url(../img/shop_bg.jpg);
-    background-position: center, center;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: darken($primary-color, 22);
+    
+    // background-image: url(../img/footer_bg2.jpg);
+    // background-position: center, center;
+    // background-attachment: scroll;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
    
     .container {
         background-color: $white;
@@ -441,7 +520,7 @@ main.page-about {
      &:after {
          content: '';
          @include position(absolute, 0,0,0,0);
-         background-color: rgba(46,23,15,.85);
+         background-color: rgba(20, 11, 8, 0.85);
      }
      .container {
          @include position(relative);
@@ -603,6 +682,14 @@ main.page-about {
         }
     }
 }
+.contact-about {
+    background-color: $white;
+    height: 100%;
+    // margin-bottom: rem-calc(0);
+    h2 {
+        padding-top: rem-calc(50);
+    }
+}
 .field-container {
     label {
         color: $primary-color;
@@ -640,6 +727,53 @@ main.page-about {
         font-size: rem-calc(18);
         width: 100%;
         height: auto;
+        &:hover {
+            background-color: darken($primary-color, 15);
+            color: $secondary-color;
+        }
         
+    }
+}
+.testimonials {
+    color: $cream;
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(17);
+    h2 {
+        margin-top: 0;
+    }
+    h3 {
+        color: $secondary-color;
+    }
+    p {
+        &:before {
+        padding-right: rem-calc(15);            
+        display: inline-block;
+        font-family: 'Fontawesome';
+        font-size: rem-calc(30);
+        color: $primary-color;
+        -webkit-font-smoothing: antialiased;
+        content: '\f10d';  
+        } 
+            
+    }
+    .slide-container {
+        @include xy-grid();
+        @include flex-align(center, middle); 
+        margin-bottom: rem-calc(40); 
+        button {
+            color: $cream;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+        .orbit {
+            @include xy-cell(10);
+            border-left: rem-calc(5) solid $primary-color;
+            li {
+                div {
+                    @include padding(2, 4, 2, 4);
+                }
+            }
+        }
     }
 }
