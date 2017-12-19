@@ -11,7 +11,7 @@ slogan: Better Beans, Better Coffee
         </h2>
 
         <div class="reservation-form">
-            <form method="post" id="contact-form" data-abide novalidate>
+            <form method="post" id="contact-form" action="assets/php/send.php" data-abide novalidate>
                 <div class="field-container">
                     <label for="name">
                         Your Name:
@@ -58,7 +58,7 @@ slogan: Better Beans, Better Coffee
 
                     <label for="time">
                         Time:
-                        <input type="time" id="time" placeholder="Eg: 10:30 AM" name="time" required>
+                        <input type="text" id="time" placeholder="Eg: 10:30 AM" name="time" required>
                         <span class="form-error">
                                 *Time field is mandatory
                             </span>
